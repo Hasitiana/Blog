@@ -50,27 +50,26 @@ class AuteurController extends AbstractController
     /**
      * @Route("/login", name="login")
      */
-    // public function seConnecter(Request $request)
-    // {
-    //     $nomAuteur = $request->request->get('nom');
-    //     $auteur = $this->get('doctrine')->getManager()->getRepository(Auteur::class)->findAuteurByName($nomAuteur);
-    //     if(!$auteur){
-    //         $this->addFlash('error', "Cet auteur n'existe pas");
-    //         return $this->render('login.html.twig',[
-    //             "form_title" => "Login"
-    //         ]);
-    //     }
-    //     $session = new Session();
-    //     $session->start();
-    //     $session->set('nom', $auteur);
-    //     return $this->redirectToRoute("articles");
-    // }
+    public function seConnecter(Request $request, Session $session)
+    {
+        $nomAuteur = $request->request->get('nom');
+        $auteur = $this->get('doctrine')->getManager()->getRepository(Auteur::class)->findAuteurByName($nomAuteur);
+        if(!$auteur){
+            $this->addFlash('error', "Cet auteur n'existe pas");
+            return $this->render('login.html.twig',[
+                "form_title" => "Login"
+            ]);
+        }
+        
+        $session->set('nom', $auteur);
+        return $this->redirectToRoute("articles");
+    }
     /**
      * @Route("/logout", name="logout")
      */
-    // public function logout(Request $request)
-    // {
-    //     $request->getSession()->clear();
-    //     return $this->redirectToRoute("articles");
-    // }
+    public function logout(Request $request, Session $session)
+    {
+        $session->remove('nom');
+        return $this->redirectToRoute("articles");
+    }
 }

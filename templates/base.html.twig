@@ -29,17 +29,17 @@
                         <li class="nav-item"><a href="#" class="nav-link">More</a></li>
                     </ul> #}
                     <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
-                        {# {% if is_granted('nom') %} #}
+                        {% if app.request.session.get('nom') == null %}
                         <li class="dropdown order-1">
                             <button type="button" id="dropdownMenu1" class="btn btn-outline-secondary "><a href="{{ path('login') }}">Connexion </a><span class="caret"></span></button>
-                        {# </li>
+                        </li>
                         {% else %}
                             {% set nom = app.session.get('nom') %}
                             <li class="dropdown order-1">
                                 <button type="button" id="dropdownMenu1" class="btn btn-outline-secondary ">{{nom}} <span class="caret"></span></button>
                                 <button type="button" id="dropdownMenu1" class="btn btn-outline-secondary "><a href="{{ path('logout') }}">Déconnexion </a><span class="caret"></span></button>
                             </li>
-                        {% endif %} #}
+                        {% endif %}
                     </ul>
                 </div>
             </div>
