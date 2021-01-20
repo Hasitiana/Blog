@@ -11,3 +11,5 @@ Le fichier .sql de la base de donnée "blog_db.sql" se trouve à la racine du pr
 4- Importez la base de données "blog_db.sql" avec la commande: php bin/console doctrine:database:import gestion_utilisateur_db.sql
 
 5- Rendez-vous maintenant vers l'url suivant pour accéder à l'application: 127.0.0.1:8080
+
+Remarque: Le système de connexion n'est pas encore tout à fait fini, du coup j'ai mis en commentaire tous les codes les concernant.
