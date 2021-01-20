@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="d-flex justify-content-center">
+        <h1>{{form_title}}</h1>
+    </div>
+    {# {% for message in app.flashes('error') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %} #}
+    <form class="form" role="form" action="{{ path('login') }}" method="POST">
+        <div class="form-group">
+            <input id="nom" name="nom" placeholder="Nom de l'auteur" class="form-control form-control-sm" type="text" required="">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+        </div>
+    </form>
+{% endblock %}
