@@ -69,16 +69,14 @@ class __TwigTemplate_ac6c426d9d4792de69d764b92914c39d119626e652cedaa866f3e576d02
             <div class=\"bg-dark border-right\" id=\"sidebar-wrapper\">
                 <div class=\"sidebar-heading text-light\">Blog</div>
                 <div class=\"list-group list-group-flush\">
-                    <a href=\"#\" class=\"list-group-item list-group-item-action bg-dark text-light\">Accueil</a>
-                    <a href=\"#\" class=\"list-group-item list-group-item-action bg-dark text-light\">Liste des auteurs</a>
                     <a href=\"";
-        // line 34
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ajout_auteur");
-        echo "\" class=\"list-group-item list-group-item-action bg-dark text-light\">Créer un auteur</a>
+        // line 32
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("articles");
+        echo "\" class=\"list-group-item list-group-item-action bg-dark text-light\">Articles</a>
                     <a href=\"";
-        // line 35
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ajout_article");
-        echo "\" class=\"list-group-item list-group-item-action bg-dark text-light\">Créer un article</a>
+        // line 33
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("auteurs");
+        echo "\" class=\"list-group-item list-group-item-action bg-dark text-light\">Auteurs</a>
                 </div>
             </div>
             <!-- /#sidebar-wrapper -->
@@ -86,7 +84,7 @@ class __TwigTemplate_ac6c426d9d4792de69d764b92914c39d119626e652cedaa866f3e576d02
             <div id=\"page-content-wrapper\">
             <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark border-bottom\">
                 ";
-        // line 43
+        // line 41
         echo "
                 <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                     <span class=\"navbar-toggler-icon\"></span>
@@ -95,50 +93,50 @@ class __TwigTemplate_ac6c426d9d4792de69d764b92914c39d119626e652cedaa866f3e576d02
                 <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
                             <ul class=\"nav navbar-nav flex-row justify-content-between ml-auto\">
                                 ";
-        // line 50
-        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 50, $this->source); })()), "request", [], "any", false, false, false, 50), "session", [], "any", false, false, false, 50), "get", [0 => "nom"], "method", false, false, false, 50), null))) {
+        // line 48
+        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 48, $this->source); })()), "request", [], "any", false, false, false, 48), "session", [], "any", false, false, false, 48), "get", [0 => "nom"], "method", false, false, false, 48), null))) {
             echo " 
                                 <li class=\"dropdown order-1\">
                                     <button type=\"button\" id=\"dropdownMenu1\" class=\"btn btn-outline-secondary \"><a href=\"";
-            // line 52
+            // line 50
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
             echo "\">Connexion </a><span class=\"caret\"></span></button>
                                 </li>
                                 ";
         } else {
-            // line 55
+            // line 53
             echo "                                    ";
-            $context["nom"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 55, $this->source); })()), "session", [], "any", false, false, false, 55), "get", [0 => "nom"], "method", false, false, false, 55);
-            // line 56
+            $context["nom"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 53, $this->source); })()), "session", [], "any", false, false, false, 53), "get", [0 => "nom"], "method", false, false, false, 53);
+            // line 54
             echo "                                    <li class=\"dropdown order-1\">
                                         <button type=\"button\" id=\"dropdownMenu1\" class=\"btn btn-outline-secondary \">";
-            // line 57
-            echo twig_escape_filter($this->env, (isset($context["nom"]) || array_key_exists("nom", $context) ? $context["nom"] : (function () { throw new RuntimeError('Variable "nom" does not exist.', 57, $this->source); })()), "html", null, true);
+            // line 55
+            echo twig_escape_filter($this->env, (isset($context["nom"]) || array_key_exists("nom", $context) ? $context["nom"] : (function () { throw new RuntimeError('Variable "nom" does not exist.', 55, $this->source); })()), "html", null, true);
             echo " <span class=\"caret\"></span></button>
                                         <button type=\"button\" id=\"dropdownMenu1\" class=\"btn btn-outline-secondary \"><a href=\"";
-            // line 58
+            // line 56
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
             echo "\">Déconnexion </a><span class=\"caret\"></span></button>
                                     </li>
                                 ";
         }
-        // line 61
+        // line 59
         echo "                            </ul>
                 </div>
             </nav>
 
                 ";
-        // line 72
+        // line 70
         echo "                            ";
-        // line 78
+        // line 76
         echo "                            ";
-        // line 94
+        // line 92
         echo "
                 <div class=\"container-fluid\">
                     ";
-        // line 96
+        // line 94
         $this->displayBlock('body', $context, $blocks);
-        // line 97
+        // line 95
         echo "                </div>
             </div>
         </div>
@@ -226,7 +224,7 @@ class __TwigTemplate_ac6c426d9d4792de69d764b92914c39d119626e652cedaa866f3e576d02
 
     }
 
-    // line 96
+    // line 94
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -256,7 +254,7 @@ class __TwigTemplate_ac6c426d9d4792de69d764b92914c39d119626e652cedaa866f3e576d02
 
     public function getDebugInfo()
     {
-        return array (  230 => 96,  210 => 13,  200 => 12,  187 => 7,  177 => 6,  158 => 5,  142 => 97,  140 => 96,  136 => 94,  134 => 78,  132 => 72,  126 => 61,  120 => 58,  116 => 57,  113 => 56,  110 => 55,  104 => 52,  99 => 50,  90 => 43,  80 => 35,  76 => 34,  64 => 24,  62 => 12,  59 => 11,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  228 => 94,  208 => 13,  198 => 12,  185 => 7,  175 => 6,  156 => 5,  140 => 95,  138 => 94,  134 => 92,  132 => 76,  130 => 70,  124 => 59,  118 => 56,  114 => 55,  111 => 54,  108 => 53,  102 => 50,  97 => 48,  88 => 41,  78 => 33,  74 => 32,  64 => 24,  62 => 12,  59 => 11,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -292,10 +290,8 @@ class __TwigTemplate_ac6c426d9d4792de69d764b92914c39d119626e652cedaa866f3e576d02
             <div class=\"bg-dark border-right\" id=\"sidebar-wrapper\">
                 <div class=\"sidebar-heading text-light\">Blog</div>
                 <div class=\"list-group list-group-flush\">
-                    <a href=\"#\" class=\"list-group-item list-group-item-action bg-dark text-light\">Accueil</a>
-                    <a href=\"#\" class=\"list-group-item list-group-item-action bg-dark text-light\">Liste des auteurs</a>
-                    <a href=\"{{ path('ajout_auteur') }}\" class=\"list-group-item list-group-item-action bg-dark text-light\">Créer un auteur</a>
-                    <a href=\"{{ path('ajout_article') }}\" class=\"list-group-item list-group-item-action bg-dark text-light\">Créer un article</a>
+                    <a href=\"{{ path('articles') }}\" class=\"list-group-item list-group-item-action bg-dark text-light\">Articles</a>
+                    <a href=\"{{ path('auteurs') }}\" class=\"list-group-item list-group-item-action bg-dark text-light\">Auteurs</a>
                 </div>
             </div>
             <!-- /#sidebar-wrapper -->

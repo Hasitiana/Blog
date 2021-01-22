@@ -63,4 +63,25 @@ class ArticleController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("article_modification/{id}", name="modification_article")
+     */
+    public function modificationArticle(Request $request, int $id) : Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $article = $entityManager->getRepository(Article::class)->find($id);
+        $form = $this->createForm(ArticleFormType::class, $article);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $entityManager->flush();
+            return $this->redirectToRoute('articles');
+        }
+
+        return $this->render('article/article-form.html.twig', [
+            'form_article' => $form->createView(),
+            'form_title' => "Modifier un article",
+        ]);
+    }
+
 }

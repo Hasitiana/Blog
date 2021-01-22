@@ -91,31 +91,14 @@ class __TwigTemplate_f31e426dd5853c078ab8c8e35df8dab2bb70119a0040f0321b3e7cf3fcb
         echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new RuntimeError('Variable "title" does not exist.', 7, $this->source); })()), "html", null, true);
         echo "</h1>
     </div>
-    ";
-        // line 9
-        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "request", [], "any", false, false, false, 9), "session", [], "any", false, false, false, 9), "get", [0 => "nom"], "method", false, false, false, 9), null))) {
-            echo " 
     <button class=\"btn btn-primary bouton_ajout\"><i class=\"fa fa-newspaper-o\"></i>&nbsp;<a href=\"";
-            // line 10
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ajout_article");
-            echo "\" style=\"text-decoration: none; color: white\">Ajouter un article</a></button>
-    <button class=\"btn btn-primary bouton_ajout\"><i class=\"fa fa-user\"></i>&nbsp;<a href=\"";
-            // line 11
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ajout_auteur");
-            echo "\" style=\"text-decoration: none; color: white\">Ajouter un auteur</a></button>
-    <br><br>
+        // line 9
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ajout_article");
+        echo "\" style=\"text-decoration: none; color: white\">Ajouter un article</a></button>
     ";
-        } else {
-            // line 14
-            echo "    <button class=\"btn btn-primary bouton_ajout\"><i class=\"fa fa-newspaper-o\"></i>&nbsp;<a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ajout_article");
-            echo "\" style=\"text-decoration: none; color: white\">Ajouter un article</a></button>
-    
-    <br><br>
-    ";
-        }
-        // line 18
-        echo "    <table class=\"table table-striped\">
+        // line 19
+        echo "    <br><br>
+    <table class=\"table table-striped\">
         <thead>
             <tr>
                 <th scope=\"col\">Titre</th>
@@ -125,41 +108,43 @@ class __TwigTemplate_f31e426dd5853c078ab8c8e35df8dab2bb70119a0040f0321b3e7cf3fcb
         </thead>
         <tbody>
             ";
-        // line 27
-        if (twig_test_empty((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 27, $this->source); })()))) {
-            // line 28
+        // line 29
+        if (twig_test_empty((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 29, $this->source); })()))) {
+            // line 30
             echo "                <tr><td colspan=\"2\" align=\"center\">Aucune article</td></tr>
             ";
         } else {
-            // line 30
+            // line 32
             echo "                ";
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 30, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 32, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
-                // line 31
+                // line 33
                 echo "                    <tr>
                         <td>";
-                // line 32
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "titre", [], "any", false, false, false, 32), "html", null, true);
+                // line 34
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "titre", [], "any", false, false, false, 34), "html", null, true);
                 echo "</td>
                         <td>";
-                // line 33
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "Auteur", [], "any", false, false, false, 33), "html", null, true);
+                // line 35
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "Auteur", [], "any", false, false, false, 35), "html", null, true);
                 echo "</td>
                         <td><button class=\"btn btn-success\"><a href=\"";
-                // line 34
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 34)]), "html", null, true);
-                echo "\" style=\"color: white\"><i class=\"fa fa-eye\"></i></a></button></td>
+                // line 36
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 36)]), "html", null, true);
+                echo "\" style=\"color: white\"><i class=\"fa fa-eye\"></i></a></button><button class=\"btn btn-warning\"><a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modification_article", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 36)]), "html", null, true);
+                echo "\" style=\"color: white\"><i class=\"fa fa-edit\"></i></a></button></td>
                     </tr>
                 ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 37
+            // line 39
             echo "            ";
         }
-        // line 38
+        // line 40
         echo "        </tbody>
     </table>
 ";
@@ -183,7 +168,7 @@ class __TwigTemplate_f31e426dd5853c078ab8c8e35df8dab2bb70119a0040f0321b3e7cf3fcb
 
     public function getDebugInfo()
     {
-        return array (  163 => 38,  160 => 37,  151 => 34,  147 => 33,  143 => 32,  140 => 31,  135 => 30,  131 => 28,  129 => 27,  118 => 18,  110 => 14,  104 => 11,  100 => 10,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  148 => 40,  145 => 39,  134 => 36,  130 => 35,  126 => 34,  123 => 33,  118 => 32,  114 => 30,  112 => 29,  100 => 19,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -196,7 +181,8 @@ class __TwigTemplate_f31e426dd5853c078ab8c8e35df8dab2bb70119a0040f0321b3e7cf3fcb
     <div class=\"d-flex justify-content-center\">
         <h1>{{ title }}</h1>
     </div>
-    {% if app.request.session.get('nom') == null %} 
+    <button class=\"btn btn-primary bouton_ajout\"><i class=\"fa fa-newspaper-o\"></i>&nbsp;<a href=\"{{ path('ajout_article') }}\" style=\"text-decoration: none; color: white\">Ajouter un article</a></button>
+    {# {% if app.request.session.get('nom') == null %} 
     <button class=\"btn btn-primary bouton_ajout\"><i class=\"fa fa-newspaper-o\"></i>&nbsp;<a href=\"{{ path('ajout_article') }}\" style=\"text-decoration: none; color: white\">Ajouter un article</a></button>
     <button class=\"btn btn-primary bouton_ajout\"><i class=\"fa fa-user\"></i>&nbsp;<a href=\"{{ path('ajout_auteur') }}\" style=\"text-decoration: none; color: white\">Ajouter un auteur</a></button>
     <br><br>
@@ -204,7 +190,8 @@ class __TwigTemplate_f31e426dd5853c078ab8c8e35df8dab2bb70119a0040f0321b3e7cf3fcb
     <button class=\"btn btn-primary bouton_ajout\"><i class=\"fa fa-newspaper-o\"></i>&nbsp;<a href=\"{{ path('ajout_article') }}\" style=\"text-decoration: none; color: white\">Ajouter un article</a></button>
     
     <br><br>
-    {% endif %}
+    {% endif %} #}
+    <br><br>
     <table class=\"table table-striped\">
         <thead>
             <tr>
@@ -221,7 +208,7 @@ class __TwigTemplate_f31e426dd5853c078ab8c8e35df8dab2bb70119a0040f0321b3e7cf3fcb
                     <tr>
                         <td>{{ article.titre }}</td>
                         <td>{{ article.Auteur }}</td>
-                        <td><button class=\"btn btn-success\"><a href=\"{{ path('article', {'id': article.id}) }}\" style=\"color: white\"><i class=\"fa fa-eye\"></i></a></button></td>
+                        <td><button class=\"btn btn-success\"><a href=\"{{ path('article', {'id': article.id}) }}\" style=\"color: white\"><i class=\"fa fa-eye\"></i></a></button><button class=\"btn btn-warning\"><a href=\"{{ path('modification_article', {'id': article.id}) }}\" style=\"color: white\"><i class=\"fa fa-edit\"></i></a></button></td>
                     </tr>
                 {% endfor %}
             {% endif %}

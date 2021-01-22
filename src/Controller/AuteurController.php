@@ -14,6 +14,18 @@ class AuteurController extends AbstractController
 {
 
     /**
+     * @Route("/auteurs", name="auteurs")
+     */
+    public function index() : Response{
+        $auteurs = $this->getDoctrine()->getManager()->getRepository(Auteur::class)->findAll();
+
+        return $this->render('auteur/index.html.twig', [
+            "auteurs" => $auteurs,
+            "title" => "Liste des auteurs"
+        ]);
+    }
+
+    /**
      * @Route("/ajout_auteur", name="ajout_auteur")
      */
     public function ajoutAuteur(Request $request):Response
@@ -48,7 +60,7 @@ class AuteurController extends AbstractController
     }
 
     /**
-     * @Route("/login", name="login")
+     * @Route("/seconnecter", name="seconnecter")
      */
     public function seConnecter(Request $request, Session $session)
     {

@@ -65,7 +65,7 @@ class __TwigTemplate_4f8c39b3f174437dfd9b7036d80863c58e84f819dcb957d4a5b9fc9fe27
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello AuteurController!";
+        echo "Les Auteurs";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,29 +85,58 @@ class __TwigTemplate_4f8c39b3f174437dfd9b7036d80863c58e84f819dcb957d4a5b9fc9fe27
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        echo "! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"";
-        // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/Users/tsiresy/Desktop/test symfony/Blog/src/Controller/AuteurController.php", 0), "html", null, true);
-        echo "\">src/Controller/AuteurController.php</a></code></li>
-        <li>Your template at <code><a href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/Users/tsiresy/Desktop/test symfony/Blog/templates/auteur/index.html.twig", 0), "html", null, true);
-        echo "\">templates/auteur/index.html.twig</a></code></li>
-    </ul>
-</div>
+        echo "    <div class=\"d-flex justify-content-center\">
+        <h1>";
+        // line 7
+        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new RuntimeError('Variable "title" does not exist.', 7, $this->source); })()), "html", null, true);
+        echo "</h1>
+    </div>
+    <button class=\"btn btn-primary bouton_ajout\"><i class=\"fa fa-user\"></i>&nbsp;<a href=\"";
+        // line 9
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ajout_auteur");
+        echo "\" style=\"text-decoration: none; color: white\">Ajouter un auteur</a></button>
+    ";
+        // line 19
+        echo "    <br><br>
+    <table class=\"table table-striped\">
+        <thead>
+            <tr>
+                <th scope=\"col\">nom</th>
+            </tr>
+        </thead>
+        <tbody>
+            ";
+        // line 27
+        if (twig_test_empty((isset($context["auteurs"]) || array_key_exists("auteurs", $context) ? $context["auteurs"] : (function () { throw new RuntimeError('Variable "auteurs" does not exist.', 27, $this->source); })()))) {
+            // line 28
+            echo "                <tr><td colspan=\"2\" align=\"center\">Aucun auteur</td></tr>
+            ";
+        } else {
+            // line 30
+            echo "                ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["auteurs"]) || array_key_exists("auteurs", $context) ? $context["auteurs"] : (function () { throw new RuntimeError('Variable "auteurs" does not exist.', 30, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["auteur"]) {
+                // line 31
+                echo "                    <tr>
+                        <td>";
+                // line 32
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auteur"], "nom", [], "any", false, false, false, 32), "html", null, true);
+                echo "</td>
+                        ";
+                // line 34
+                echo "                    </tr>
+                ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['auteur'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 36
+            echo "            ";
+        }
+        // line 37
+        echo "        </tbody>
+    </table>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -129,30 +158,49 @@ class __TwigTemplate_4f8c39b3f174437dfd9b7036d80863c58e84f819dcb957d4a5b9fc9fe27
 
     public function getDebugInfo()
     {
-        return array (  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  138 => 37,  135 => 36,  128 => 34,  124 => 32,  121 => 31,  116 => 30,  112 => 28,  110 => 27,  100 => 19,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello AuteurController!{% endblock %}
+{% block title %}Les Auteurs{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"{{ 'C:/Users/tsiresy/Desktop/test symfony/Blog/src/Controller/AuteurController.php'|file_link(0) }}\">src/Controller/AuteurController.php</a></code></li>
-        <li>Your template at <code><a href=\"{{ 'C:/Users/tsiresy/Desktop/test symfony/Blog/templates/auteur/index.html.twig'|file_link(0) }}\">templates/auteur/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class=\"d-flex justify-content-center\">
+        <h1>{{ title }}</h1>
+    </div>
+    <button class=\"btn btn-primary bouton_ajout\"><i class=\"fa fa-user\"></i>&nbsp;<a href=\"{{ path('ajout_auteur') }}\" style=\"text-decoration: none; color: white\">Ajouter un auteur</a></button>
+    {# {% if app.request.session.get('nom') == null %} 
+    <button class=\"btn btn-primary bouton_ajout\"><i class=\"fa fa-newspaper-o\"></i>&nbsp;<a href=\"{{ path('ajout_article') }}\" style=\"text-decoration: none; color: white\">Ajouter un article</a></button>
+    <button class=\"btn btn-primary bouton_ajout\"><i class=\"fa fa-user\"></i>&nbsp;<a href=\"{{ path('ajout_auteur') }}\" style=\"text-decoration: none; color: white\">Ajouter un auteur</a></button>
+    <br><br>
+    {% else %} 
+    <button class=\"btn btn-primary bouton_ajout\"><i class=\"fa fa-newspaper-o\"></i>&nbsp;<a href=\"{{ path('ajout_article') }}\" style=\"text-decoration: none; color: white\">Ajouter un article</a></button>
+    
+    <br><br>
+    {% endif %}#}
+    <br><br>
+    <table class=\"table table-striped\">
+        <thead>
+            <tr>
+                <th scope=\"col\">nom</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if auteurs is empty %}
+                <tr><td colspan=\"2\" align=\"center\">Aucun auteur</td></tr>
+            {% else %}
+                {% for auteur in auteurs %}
+                    <tr>
+                        <td>{{ auteur.nom }}</td>
+                        {# <td><button class=\"btn btn-success\"><a href=\"{{ path('article', {'id': article.id}) }}\" style=\"color: white\"><i class=\"fa fa-eye\"></i></a></button></td> #}
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
 {% endblock %}
 ", "auteur/index.html.twig", "C:\\Users\\tsiresy\\Desktop\\test symfony\\Blog\\templates\\auteur\\index.html.twig");
     }

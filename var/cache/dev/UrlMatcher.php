@@ -15,8 +15,10 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'articles', '_controller' => 'App\\Controller\\ArticleController::index'], null, null, null, false, false, null]],
         '/ajout_article' => [[['_route' => 'ajout_article', '_controller' => 'App\\Controller\\ArticleController::ajoutArticle'], null, null, null, false, false, null]],
+        '/auteurs' => [[['_route' => 'auteurs', '_controller' => 'App\\Controller\\AuteurController::index'], null, null, null, false, false, null]],
         '/ajout_auteur' => [[['_route' => 'ajout_auteur', '_controller' => 'App\\Controller\\AuteurController::ajoutAuteur'], null, null, null, false, false, null]],
-        '/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\AuteurController::seConnecter'], null, null, null, false, false, null]],
+        '/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\AuteurController::login'], null, null, null, false, false, null]],
+        '/seconnecter' => [[['_route' => 'seconnecter', '_controller' => 'App\\Controller\\AuteurController::seConnecter'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'logout', '_controller' => 'App\\Controller\\AuteurController::logout'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
@@ -36,7 +38,10 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/article/([^/]++)(*:186)'
+                .'|/article(?'
+                    .'|/([^/]++)(*:189)'
+                    .'|_modification/([^/]++)(*:219)'
+                .')'
             .')/?$}sD',
     ],
     [ // $dynamicRoutes
@@ -47,8 +52,9 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        186 => [
-            [['_route' => 'article', '_controller' => 'App\\Controller\\ArticleController::article'], ['id'], null, null, false, true, null],
+        189 => [[['_route' => 'article', '_controller' => 'App\\Controller\\ArticleController::article'], ['id'], null, null, false, true, null]],
+        219 => [
+            [['_route' => 'modification_article', '_controller' => 'App\\Controller\\ArticleController::modificationArticle'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

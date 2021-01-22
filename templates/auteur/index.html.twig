@@ -1,20 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AuteurController!{% endblock %}
+{% block title %}Les Auteurs{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/tsiresy/Desktop/test symfony/Blog/src/Controller/AuteurController.php'|file_link(0) }}">src/Controller/AuteurController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/tsiresy/Desktop/test symfony/Blog/templates/auteur/index.html.twig'|file_link(0) }}">templates/auteur/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class="d-flex justify-content-center">
+        <h1>{{ title }}</h1>
+    </div>
+    <button class="btn btn-primary bouton_ajout"><i class="fa fa-user"></i>&nbsp;<a href="{{ path('ajout_auteur') }}" style="text-decoration: none; color: white">Ajouter un auteur</a></button>
+    {# {% if app.request.session.get('nom') == null %} 
+    <button class="btn btn-primary bouton_ajout"><i class="fa fa-newspaper-o"></i>&nbsp;<a href="{{ path('ajout_article') }}" style="text-decoration: none; color: white">Ajouter un article</a></button>
+    <button class="btn btn-primary bouton_ajout"><i class="fa fa-user"></i>&nbsp;<a href="{{ path('ajout_auteur') }}" style="text-decoration: none; color: white">Ajouter un auteur</a></button>
+    <br><br>
+    {% else %} 
+    <button class="btn btn-primary bouton_ajout"><i class="fa fa-newspaper-o"></i>&nbsp;<a href="{{ path('ajout_article') }}" style="text-decoration: none; color: white">Ajouter un article</a></button>
+    
+    <br><br>
+    {% endif %}#}
+    <br><br>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">nom</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if auteurs is empty %}
+                <tr><td colspan="2" align="center">Aucun auteur</td></tr>
+            {% else %}
+                {% for auteur in auteurs %}
+                    <tr>
+                        <td>{{ auteur.nom }}</td>
+                        {# <td><button class="btn btn-success"><a href="{{ path('article', {'id': article.id}) }}" style="color: white"><i class="fa fa-eye"></i></a></button></td> #}
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
 {% endblock %}

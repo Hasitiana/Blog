@@ -18,7 +18,10 @@ return [
     'articles' => [[], ['_controller' => 'App\\Controller\\ArticleController::index'], [], [['text', '/']], [], []],
     'ajout_article' => [[], ['_controller' => 'App\\Controller\\ArticleController::ajoutArticle'], [], [['text', '/ajout_article']], [], []],
     'article' => [['id'], ['_controller' => 'App\\Controller\\ArticleController::article'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/article']], [], []],
+    'modification_article' => [['id'], ['_controller' => 'App\\Controller\\ArticleController::modificationArticle'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/article_modification']], [], []],
+    'auteurs' => [[], ['_controller' => 'App\\Controller\\AuteurController::index'], [], [['text', '/auteurs']], [], []],
     'ajout_auteur' => [[], ['_controller' => 'App\\Controller\\AuteurController::ajoutAuteur'], [], [['text', '/ajout_auteur']], [], []],
-    'login' => [[], ['_controller' => 'App\\Controller\\AuteurController::seConnecter'], [], [['text', '/login']], [], []],
+    'login' => [[], ['_controller' => 'App\\Controller\\AuteurController::login'], [], [['text', '/login']], [], []],
+    'seconnecter' => [[], ['_controller' => 'App\\Controller\\AuteurController::seConnecter'], [], [['text', '/seconnecter']], [], []],
     'logout' => [[], ['_controller' => 'App\\Controller\\AuteurController::logout'], [], [['text', '/logout']], [], []],
 ];
