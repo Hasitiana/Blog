@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des 5 derniers articles{% endblock %}
+{% block title %}Liste des articles{% endblock %}
 
 {% block body %}
     <div class="d-flex justify-content-center">
@@ -39,4 +39,5 @@
             {% endif %}
         </tbody>
     </table>
+    {{ knp_pagination_render(articles) }}
 {% endblock %}

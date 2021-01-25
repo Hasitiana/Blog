@@ -1,16 +1,25 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => 'v4.4.99',
-    'version' => '4.4.99.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
-    'name' => 'symfony/website-skeleton',
+    'reference' => '8de9b11d32891505e7a951fdf5723997851c08a7',
+    'name' => '__root__',
   ),
   'versions' => 
   array (
+    '__root__' => 
+    array (
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8de9b11d32891505e7a951fdf5723997851c08a7',
+    ),
     'composer/package-versions-deprecated' => 
     array (
       'pretty_version' => '1.11.99.1',
@@ -172,6 +181,24 @@
       array (
       ),
       'reference' => '121af47c9aee9c03031bdeca3fac0540f59aa5c3',
+    ),
+    'knplabs/knp-components' => 
+    array (
+      'pretty_version' => 'v3.0.0',
+      'version' => '3.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '246b700fdc40020f1db1c887cd462b9b9d3b79b0',
+    ),
+    'knplabs/knp-paginator-bundle' => 
+    array (
+      'pretty_version' => 'v5.4.2',
+      'version' => '5.4.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8a7255062dd9f6ff8a3a4712a4b34bdbbc9f31f7',
     ),
     'laminas/laminas-code' => 
     array (
@@ -355,8 +382,8 @@
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache-implementation' => 
@@ -1029,15 +1056,6 @@
       array (
       ),
       'reference' => 'd419cd0b14f15f44bb50b77e2f209a8c63249baa',
-    ),
-    'symfony/website-skeleton' => 
-    array (
-      'pretty_version' => 'v4.4.99',
-      'version' => '4.4.99.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => NULL,
     ),
     'symfony/yaml' => 
     array (

@@ -5,24 +5,31 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Form\ArticleFormType;
 use App\Repository\ArticleRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ArticleController extends AbstractController
 {
     /**
      * @Route("/", name="articles")
      */
-    public function index(): Response
+    public function index(Request $request, PaginatorInterface $paginator): Response
     {
-        $articles = $this->get('doctrine')->getManager()->getRepository(Article::class)->findAllByLimit(5);
+        $articles = $this->get('doctrine')->getManager()->getRepository(Article::class)->findAll();
+
+        $articlesPagines = $paginator->paginate(
+            $articles,
+            $request->query->getInt('page', 1),
+            5
+        );
 
         return $this->render('article/index.html.twig', [
             'controller_name' => 'AuteurController',
-            'articles' => $articles,
-            'title' => "Liste des 5 derniers articles",
+            'articles' => $articlesPagines,
+            'title' => "Liste des articles",
         ]);
     }
     
